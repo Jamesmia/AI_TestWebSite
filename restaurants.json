@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "The Friendly Fork",
+        "cuisine": "American Comfort Food",
+        "address": "123 Main St, San Antonio, TX",
+        "description": "A cozy spot known for its hearty breakfasts and classic American dishes. Family-owned and operated for over 20 years, offering a warm atmosphere and generous portions.",
+        "image": "https://via.placeholder.com/400x250/FF5733/FFFFFF?text=Friendly+Fork",
+        "website": "http://www.friendlyforksa.com"
+    },
+    {
+        "id": 2,
+        "name": "Spice Route Bistro",
+        "cuisine": "Indian & Nepalese",
+        "address": "456 Oak Ave, San Antonio, TX",
+        "description": "Experience the vibrant flavors of India and Nepal at this charming bistro. Fresh ingredients, authentic recipes, and a welcoming ambiance make it a local favorite.",
+        "image": "https://via.placeholder.com/400x250/33FF57/FFFFFF?text=Spice+Route",
+        "website": "http://www.spiceroutebistro.com"
+    },
+    {
+        "id": 3,
+        "name": "El Fuego Taqueria",
+        "cuisine": "Authentic Mexican",
+        "address": "789 Pine Ln, San Antonio, TX",
+        "description": "Serving up the best tacos and traditional Mexican fare in San Antonio. Made with love and generations-old recipes, every bite is a fiesta!",
+        "image": "https://via.placeholder.com/400x250/3357FF/FFFFFF?text=El+Fuego",
+        "website": "http://www.elfuegotaqueria.com"
+    },
+    {
+        "id": 4,
+        "name": "Green Garden Cafe",
+        "cuisine": "Vegan & Vegetarian",
+        "address": "101 Elm St, San Antonio, TX",
+        "description": "A haven for plant-based eaters, offering delicious and innovative vegan and vegetarian dishes made from locally sourced, organic ingredients.",
+        "image": "https://via.placeholder.com/400x250/FF33F0/FFFFFF?text=Green+Garden",
+        "website": "http://www.greengardencafe.com"
+    }
+]
