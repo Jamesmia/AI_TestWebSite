@@ -59,7 +59,14 @@ section {
 
 .hero-content p {
     font-size: 1.2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem; /* Adjusted margin to make space for time */
+}
+
+#current-time {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    color: white; /* Ensure it's visible against the hero background */
 }
 
 h2 {

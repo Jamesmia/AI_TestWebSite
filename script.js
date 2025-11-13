@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const weatherInfoDiv = document.getElementById('weather-info');
+    const currentTimeDiv = document.getElementById('current-time');
 
     async function getWeatherData() {
         try {
@@ -35,5 +36,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function updateTime() {
+        const now = new Date();
+        const options = {
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric',
+            hour12: true,
+            timeZone: 'America/Chicago' // San Antonio's timezone
+        };
+        currentTimeDiv.textContent = now.toLocaleTimeString('en-US', options);
+    }
+
     getWeatherData();
+    updateTime(); // Initial call
+    setInterval(updateTime, 1000); // Update every second
 });
