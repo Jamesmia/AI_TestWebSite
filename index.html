@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>San Antonio Weather</title>
+    <title>San Antonio Hub</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <nav>
-            <a href="#" class="logo">SA Weather</a>
+            <a href="#" class="logo">SA Hub</a>
             <div id="current-day-date">Loading date...</div>
         </nav>
     </header>
@@ -17,22 +17,36 @@
     <main>
         <section id="hero">
             <div class="hero-content">
-                <h1>San Antonio Weather</h1>
-                <p>Your simple and up-to-date weather forecast.</p>
+                <h1>Welcome to San Antonio</h1>
+                <p>Your guide to events, weather, and more in the Alamo City.</p>
                 <div id="current-time">Loading time...</div>
             </div>
         </section>
 
-        <section id="weather">
-            <h2>Current Forecast</h2>
-            <div id="weather-info">
-                <p>Loading weather data...</p>
+        <section id="current-weather-section">
+            <h2>Current Weather in San Antonio</h2>
+            <div id="current-weather-info">
+                <p>Loading current weather...</p>
+            </div>
+        </section>
+
+        <section id="monthly-forecast-section">
+            <h2>Monthly Forecast</h2>
+            <div id="monthly-forecast-info" class="forecast-grid">
+                <p>Loading monthly forecast...</p>
+            </div>
+        </section>
+
+        <section id="events-section">
+            <h2>Events in San Antonio (This Month)</h2>
+            <div id="events-info" class="events-list">
+                <p>Loading events...</p>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 My Website. All rights reserved.</p>
+        <p>&copy; 2025 San Antonio Hub. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>

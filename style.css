@@ -1,24 +1,29 @@
 :root {
-    --primary-color: #007BFF;
+    --primary-color: #0056b3; /* Darker blue for a more professional look */
     --secondary-color: #6c757d;
-    --background-color: #f8f9fa;
+    --background-color: #f4f7f6; /* Light gray for a clean background */
     --text-color: #343a40;
-    --light-gray: #f1f1f1;
+    --light-gray: #e9ecef;
+    --card-background: #ffffff;
+    --border-color: #dee2e6;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 header {
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: var(--primary-color);
+    color: white;
     padding: 1rem 5%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -28,88 +33,166 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: bold;
-    color: var(--primary-color);
+    color: white;
     text-decoration: none;
 }
 
 #current-day-date {
     font-size: 1rem;
-    color: var(--secondary-color);
-    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 400;
 }
 
 main {
-    padding: 0;
+    padding: 2rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 section {
-    padding: 4rem 5%;
+    background-color: var(--card-background);
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+h1 {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
     text-align: center;
 }
 
 #hero {
-    background: linear-gradient(to right, var(--primary-color), #0056b3);
+    background: linear-gradient(135deg, var(--primary-color) 0%, #007bff 100%);
     color: white;
-    padding: 6rem 5%;
+    padding: 4rem 5%;
+    text-align: center;
+    border-radius: 0; /* Remove border-radius from section */
+    box-shadow: none; /* Remove box-shadow from section */
+    margin-bottom: 2rem;
 }
 
-.hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .hero-content p {
     font-size: 1.2rem;
-    margin-bottom: 1rem; /* Adjusted margin to make space for time */
+    margin-bottom: 1rem;
+    opacity: 0.9;
 }
 
 #current-time {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-top: 1rem;
-    color: white; /* Ensure it's visible against the hero background */
-}
-
-h2 {
     font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: var(--text-color);
+    font-weight: bold;
+    margin-top: 1.5rem;
+    color: white;
 }
 
-#weather {
-    background-color: white;
-}
-
-#weather-info {
+/* Current Weather Section */
+#current-weather-info {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    gap: 1rem;
+    font-size: 1.1rem;
 }
 
-.weather-card {
-    background-color: var(--background-color);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    max-width: 600px;
+#current-weather-info .temperature {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 0.5rem 0;
+}
+
+#current-weather-info .description {
+    font-size: 1.3rem;
+    color: var(--secondary-color);
+}
+
+/* Monthly Forecast Section */
+.forecast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
     text-align: center;
 }
 
-.weather-card h3 {
-    font-size: 1.8rem;
-    color: var(--primary-color);
-    margin-top: 0;
+.forecast-card {
+    background-color: var(--light-gray);
+    padding: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.weather-card .temperature {
-    font-size: 4rem;
+.forecast-card h3 {
+    font-size: 1.1rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.forecast-card .temp {
+    font-size: 1.8rem;
     font-weight: bold;
-    margin: 1rem 0;
+    margin: 0.5rem 0;
+}
+
+.forecast-card .desc {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+/* Events Section */
+.events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.event-card {
+    background-color: var(--light-gray);
+    padding: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    text-align: left;
+}
+
+.event-card h3 {
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.event-card .event-date {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.event-card p {
+    font-size: 0.95rem;
+    margin-bottom: 0;
 }
 
 footer {
@@ -117,4 +200,51 @@ footer {
     color: white;
     text-align: center;
     padding: 1.5rem 5%;
+    margin-top: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    #current-day-date {
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    #current-time {
+        font-size: 2rem;
+    }
+
+    .forecast-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    #current-time {
+        font-size: 1.8rem;
+    }
+
+    .forecast-grid {
+        grid-template-columns: 1fr;
+    }
 }
