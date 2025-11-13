@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 throw new Error('Could not retrieve location data from weather.gov');
             }
             const pointsData = await pointsResponse.json();
+            if (!pointsData.properties || !pointsData.properties.forecast) {
+                throw new Error('Invalid location data received from weather.gov: missing properties or forecast URL.');
+            }
             const forecastUrl = pointsData.properties.forecast;
 
             // Now, get the actual forecast
@@ -18,7 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 throw new Error('Could not retrieve forecast data from weather.gov');
             }
             const forecastData = await forecastResponse.json();
-
+            if (!forecastData.properties || !forecastData.properties.periods || forecastData.properties.periods.length === 0) {
+                throw new Error('Invalid forecast data received from weather.gov: missing properties or periods.');
+            }
             // Get the current forecast (the first period in the array)
             const currentForecast = forecastData.properties.periods[0];
 
