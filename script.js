@@ -63,7 +63,9 @@ document.addEventListener('DOMContentLoaded', () => {
             day: 'numeric',
             timeZone: 'America/Chicago'
         };
-        currentDayDateDiv.textContent = now.toLocaleDateString('en-US', options);
+        const formattedDate = now.toLocaleDateString('en-US', options);
+        currentDayDateDiv.textContent = formattedDate;
+        console.log('Updating Day/Date:', formattedDate); // Added for debugging
     }
 
     getWeatherData();
