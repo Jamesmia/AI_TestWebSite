@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const weatherInfoDiv = document.getElementById('weather-info');
     const currentTimeDiv = document.getElementById('current-time');
+    const currentDayDateDiv = document.getElementById('current-day-date');
 
     async function getWeatherData() {
         try {
@@ -53,7 +54,20 @@ document.addEventListener('DOMContentLoaded', () => {
         currentTimeDiv.textContent = now.toLocaleTimeString('en-US', options);
     }
 
+    function updateDayDate() {
+        const now = new Date();
+        const options = {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            timeZone: 'America/Chicago'
+        };
+        currentDayDateDiv.textContent = now.toLocaleDateString('en-US', options);
+    }
+
     getWeatherData();
     updateTime(); // Initial call
     setInterval(updateTime, 1000); // Update every second
+    updateDayDate(); // Initial call for day and date
 });
